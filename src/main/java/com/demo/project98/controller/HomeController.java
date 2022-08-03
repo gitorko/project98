@@ -4,7 +4,6 @@ import com.demo.project98.domain.Country;
 import com.demo.project98.domain.Customer;
 import com.demo.project98.repo.CustomerRepository;
 import com.demo.project98.service.CountryCache;
-import com.demo.project98.service.CountryCacheEvict;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeController {
 
     private final CountryCache countryCache;
-    private final CountryCacheEvict countryCacheEvict;
 
     private final CustomerRepository customerRepository;
 
@@ -34,7 +32,7 @@ public class HomeController {
 
     @DeleteMapping("/country/{code}")
     public void evictCountry(@PathVariable String code) {
-        countryCacheEvict.evictSingleCacheValue(Country.builder().code(code).build());
+        countryCache.evictSingleCacheValue(Country.builder().code(code).build());
     }
 
     @GetMapping("/customer/{id}")

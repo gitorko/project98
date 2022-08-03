@@ -2,6 +2,7 @@ package com.demo.project98.service;
 
 import com.demo.project98.domain.Country;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,11 @@ public class CountryCache {
     public Country put(Country country) {
         log.info("Adding country: {}", country);
         return country;
+    }
+
+    @CacheEvict(cacheNames = "countryCache", key = "#country.code")
+    public void evictSingleCacheValue(Country country) {
+        log.info("Evicting from cache: {}", country);
     }
 
 }

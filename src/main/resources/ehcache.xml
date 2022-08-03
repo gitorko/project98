@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
-
-    <diskStore path="java.io.tmpdir"/>
-
-    <cache name="countryCache"
-           maxElementsInMemory="2"
-           eternal="false"
-           overflowToDisk="false"
-           timeToLiveSeconds="10000" />
-
-    <cache name="customer"
-           maxElementsInMemory="2"
-           eternal="false"
-           overflowToDisk="false"
-           timeToLiveSeconds="10000" />
-
-</ehcache>
+<config xmlns='http://www.ehcache.org/v3'>
+    <cache alias="countryCache">
+        <key-type>java.lang.String</key-type>
+        <value-type>com.demo.project98.domain.Country</value-type>
+        <expiry>
+            <ttl unit="minutes">1</ttl>
+        </expiry>
+        <listeners>
+            <listener>
+                <class>com.demo.project98.service.CountryCacheListener</class>
+                <event-firing-mode>ASYNCHRONOUS</event-firing-mode>
+                <event-ordering-mode>ORDERED</event-ordering-mode>
+                <events-to-fire-on>CREATED</events-to-fire-on>
+                <events-to-fire-on>REMOVED</events-to-fire-on>
+                <events-to-fire-on>EXPIRED</events-to-fire-on>
+            </listener>
+        </listeners>
+        <resources>
+            <heap unit="entries">2</heap>
+        </resources>
+        <heap-store-settings>
+            <max-object-graph-size>2</max-object-graph-size>
+            <max-object-size unit="kB">5</max-object-size>
+        </heap-store-settings>
+    </cache>
+</config>

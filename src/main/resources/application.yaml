@@ -13,3 +13,6 @@ spring:
     properties.hibernate.temp.use_jdbc_metadata_defaults: false
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     defer-datasource-initialization: true
+  cache:
+    jcache:
+      config: classpath:ehcache.xml
