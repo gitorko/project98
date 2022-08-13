@@ -38,5 +38,5 @@ To run the backend in dev mode.
 
 Import the postman collection to postman
 
-[Postman Collection](https://github.com/gitorko/project98/blob/main/postman/Project98.postman_collection.json)
+[Postman Collection](https://raw.githubusercontent.com/gitorko/project98/main/postman/Project98.postman_collection.json)
 
