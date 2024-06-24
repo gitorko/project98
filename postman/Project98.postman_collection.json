@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "1d12201a-32c3-4ef4-bb88-4cd834a95a20",
+		"_postman_id": "a86a488c-c9d8-4bfa-9173-724205ca5529",
 		"name": "Project98",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "4185850"
@@ -12,14 +12,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/country-get/FR",
+					"raw": "http://localhost:8080/country/FR",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"country-get",
+						"country",
 						"FR"
 					]
 				}
@@ -29,18 +29,26 @@
 		{
 			"name": "Put Country",
 			"request": {
-				"method": "GET",
+				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\": \"FR\",\n    \"name\": \"France\",\n    \"capital\": \"Paris\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:8080/country-put/FR",
+					"raw": "http://localhost:8080/country",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"country-put",
-						"FR"
+						"country"
 					]
 				}
 			},
@@ -67,7 +75,26 @@
 			"response": []
 		},
 		{
-			"name": "Get Customer",
+			"name": "Get All Customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customer By Id",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -81,6 +108,395 @@
 					"path": [
 						"customer",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"raj\",\n    \"city\": \"Bangalore\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get New Customer By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/customer/201",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"201"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Customer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"raj\",\n    \"city\": \"Bangalore\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer/201",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"201"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Evict All Customers",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/customer/evict",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"evict"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Square of Number 9",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/square/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"square",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Square of Number 15",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/square/15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"square",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator Cache",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/caches",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"caches"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator Cache customerCache",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/caches/customerCache",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"caches",
+						"customerCache"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cache Gets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/metrics/cache.gets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"metrics",
+						"cache.gets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cache Gets - customerCache",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/metrics/cache.gets?tag=name:customerCache",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"metrics",
+						"cache.gets"
+					],
+					"query": [
+						{
+							"key": "tag",
+							"value": "name:customerCache"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cache Puts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/metrics/cache.puts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"metrics",
+						"cache.puts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cache Puts - customerCache",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/metrics/cache.puts?tag=name:customerCache",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"metrics",
+						"cache.puts"
+					],
+					"query": [
+						{
+							"key": "tag",
+							"value": "name:customerCache"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cache Evictions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/metrics/cache.evictions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"metrics",
+						"cache.evictions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cache Evictions - customerCache",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/metrics/cache.puts?tag=name:customerCache",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"metrics",
+						"cache.puts"
+					],
+					"query": [
+						{
+							"key": "tag",
+							"value": "name:customerCache"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cache Removals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/metrics/cache.removals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"metrics",
+						"cache.removals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cache Removals - customerCache",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/metrics/cache.removals?tag=name:customerCache",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"metrics",
+						"cache.removals"
+					],
+					"query": [
+						{
+							"key": "tag",
+							"value": "name:customerCache"
+						}
 					]
 				}
 			},
